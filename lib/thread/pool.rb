@@ -143,11 +143,16 @@ class Thread::Pool
 		@auto_trim     = false
 		@idle_trim     = nil
 
-		@mutex.synchronize {
-			min.times {
-				spawn_thread
-			}
-		}
+    @mutex.synchronize {
+      min.times.with_index { |index|
+        begin
+          spawn_thread
+        rescue
+          puts "can't create more than #{index + 1} threads"
+          break
+        end
+      }
+    }
 	end
 
 	# Check if the pool has been shut down.
