@@ -200,6 +200,11 @@ class Thread::Pool
 		self
 	end
 
+  # Returns the actual amount of workers
+  def size
+    @workers.size
+  end
+
 	# Resize the pool with the passed arguments.
 	def resize(min, max = nil)
 		@min = min
