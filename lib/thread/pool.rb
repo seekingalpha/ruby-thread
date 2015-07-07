@@ -148,7 +148,7 @@ class Thread::Pool
         begin
           spawn_thread
         rescue
-          puts "can't create more than #{index + 1} threads"
+          puts "can't create more than #{index} threads"
           break
         end
       }
