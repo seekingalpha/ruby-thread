@@ -15,7 +15,15 @@ describe Thread::Pool do
 		expect(pool.spawned).to eq(4)
 
 		pool.shutdown
-	end
+  end
+
+  it 'creates a new pool with a huge amount of threads that will handle Thread Error exception' do
+    pool = Thread.pool(3000)
+
+    expect(pool.spawned).to be<=2500
+
+    pool.shutdown
+  end
 
 	it 'properly reports the backlog length' do
 		pool = Thread.pool(2)
