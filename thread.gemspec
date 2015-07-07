@@ -3,13 +3,13 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = "thread"
-  spec.version       = "0.2.0"
-  spec.authors       = ["meh."]
-  spec.email         = ["meh@schizofreni.co"]
+  spec.name          = "seekingalpha_thread"
+  spec.version       = "1.0.0"
+  spec.authors       = ["Michel Epsztejn"]
+  spec.email         = ["michel@seekingalpha.com"]
   spec.summary       = %q{Various extensions to the base thread library.}
-  spec.description   = %q{Includes a thread pool, message passing capabilities, a recursive mutex, promise, future and delay.}
-  spec.homepage      = "http://github.com/meh/ruby-thread"
+  spec.description   = %q{Forked from meh/ruby-thread. Fixes thread limit exception. Includes a thread pool, message passing capabilities, a recursive mutex, promise, future and delay.}
+  spec.homepage      = "https://github.com/seekingalpha/ruby-thread"
   spec.license       = "WTFPL"
 
   spec.files         = `git ls-files -z`.split("\x0")
